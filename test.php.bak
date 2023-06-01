@@ -1,0 +1,97 @@
+<?php 
+    $con = mysqli_connect('localhost:3307', 'root', '', 'recipes');
+    $query = mysqli_query($con, "SELECT * FROM `meals`");  
+?>
+
+<!DOCTYPE html>
+<html>
+    <style>
+        .display {
+            position: relative;
+            height: 10vh;
+        }
+
+        .display-elements{
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color:white;
+        }
+
+        .display-search{
+            display: inline-block;
+        }
+
+        .display input{
+            padding: 15px 20px;
+            background-color: #cbe3ff57;
+            border: none;
+            border-radius: 5px;
+            border-width: 2px;
+            font-weight: bold;
+        }
+
+        .display button{
+            color:white;
+            background-color:#4b9fff;
+            padding: 15px 20px;
+            border: solid;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+    </style>
+    <head>
+        <link href="recipes.css" type="text/css" rel="stylesheet"/>
+        <title>Meal Generator</title>
+    </head>
+    <body>
+        <div class="topnav">
+            <h1>Meal Generator</h1>
+            <a href="#profile">Profile</a>
+            <a href="#about">About</a>
+            <a class="active" href="recipes.php">Recipes</a>
+            <a href="frontpage.html">Home</a>
+        </div>
+
+        <div class="display">
+            <div class="display-elements">
+                <div class="display-search">
+                    <form action="search.php" method="GET">
+                        <input type="text" name="q" value=<?php echo '' ?>> 
+                        <button type="submit" id="button" value="Submit search">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="card-sec-head">All Recipes</h2>
+        <section class="cards">
+            <?php
+                while($row = mysqli_fetch_array($query)){
+            ?>
+            <div class="card">
+                <div class="card-body">
+                <img src= 
+                    <?php
+                        $url = $row['Picture'];
+                        if (@exif_imagetype($url) == IMAGETYPE_JPEG || @exif_imagetype($url) == IMAGETYPE_PNG){ 
+                            echo $url;
+                        } else {
+                            echo "https://ch0styu58r-flywheel.netdna-ssl.com/wp-content/uploads/2017/01/empty-plate.jpg";
+                        }
+                    ?>
+                    class="card-img">
+                    <h2 class="card-title"> <?php echo $row['Name'] ?></h2>
+                    <p class="card-desc"> <?php echo $row['Description']?>...</p>
+                </div>
+                <button class="card-btn">View Recipe</button>
+            </div>
+            <?php } ?>
+        </section>
+        <div class="footer-bottom">
+            &copy; MealGenerator | COSC 473
+        </div>
+    </body>
+</html>

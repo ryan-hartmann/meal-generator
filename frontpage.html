@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="frontpage.css" type="text/css" rel="stylesheet"/>
+        <title>Meal Generator</title>
+    </head>
+    <body>
+        <div class="topnav">
+            <h1>Meal Generator</h1>
+			<a href="singlerecipe.html"> New Template </a>
+			<a href="enterRecipe.html">Add recipe</a>
+            <a href="user.html">Profile</a>
+            <a href="#about">About</a>
+            <a href="recipes.php">Recipes</a>
+            <a class="active" href="frontpage.html">Home</a>
+        </div>
+
+        <div class="display">
+            <div class="display-elements">
+                <h1>Find a Recipe</h1>
+                <div class="display-search">
+                    <form action="search.php" method="GET">
+                        <input type="text" name="q" placeholder="Find a Recipe" /> 
+                        <button type="submit" id="button" value="Submit search">Search</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <h2 class="card-sec-head">Dinner Recipes</h2>
+        <section class="cards">
+            <div class="card">
+                <div class="card-body">
+                    <img src="images/chicken_recipe1.jpg" class="card-img">
+                    <h2 class="card-title">Creamy Herb Chicken</h2>
+                    <p class="card-desc">
+                        So thick and creamy, this creamy herb sauce
+                        pairs perfectly over rice, pasta, 
+                        or Creamy Mashed Potatoes. 
+                        To keep the entire meal low carb, 
+                        try it over cauliflower mash!</p>
+                </div>
+                <button class="card-btn">View Recipe</button>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <img src="images/chicken_recipe2.jpg" class="card-img">
+                    <h2 class="card-title">Creamy Garlic Chicken Breasts</h2>
+                    <p class="card-desc">Chicken breasts in an irresistible garlic sauce 
+                        filled with caramelized onions and garlic 
+                        is a winner of a chicken dinner!</p>
+                </div>
+                <button class="card-btn">View Recipe</button>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <img src="images/chicken_recipe3.jpg" class="card-img">
+                    <h2 class="card-title">Italian Baked Chicken Breast</h2>
+                    <p class="card-desc"> Boneless skinless baked chicken breast 
+                        recipe, prepared with a simple spice mixture, 
+                        garlic and olive oil, 
+                        and finished with fresh parsley and basil!</p>
+                </div>
+                <button class="card-btn">View Recipe</button>
+            </div>
+        </section>
+        
+        <h2 class="card-sec-head">Delicious Desserts</h2>
+        <section class="cards">
+            <div class="card">
+                <div class="card-body">
+                    <img src="images/dessert_recipe_1.jpg" class="card-img">
+                    <h2 class="card-title">Lemon Meringue Pie</h2>
+                    <p class="card-desc">
+                        It's the stuff of dreams: 
+                        a classic sweet and tart dessert 
+                        with a foolproof meringue topping that won't weep! </p>
+                </div>
+                ><button class="card-btn"><a href="testRecipe.html">View Recipe</a></button>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <img src="images/dessert_recipe_3" class="card-img">
+                    <h2 class="card-title">Fresh Fruit Tarts</h2>
+                    <p class="card-desc">A light fresh fruit tart
+                         with a simple shortbread crust filled 
+                         with a mixture of cream cheese and lemon curd.
+                         Simple to make and easily adaptable 
+                         to your favorite fruits.</p>
+                </div>
+                <button class="card-btn">View Recipe</button>
+            </div>
+
+            <div class="card">
+                <div class="card-body">
+                    <img src="images/dessert_recipe_2.jpg" class="card-img">
+                    <h2 class="card-title">Caramel Topped Ice Cream Dessert</h2>
+                    <p class="card-desc"> This ice cream cake is the perfect frozen dessert,
+                         with fudge, caramel and salty pretzels!</p>
+                </div>
+                <button class="card-btn">View Recipe</button>
+            </div>
+        </section>
+
+        <div class="footer-bottom">
+            &copy; MealGenerator | COSC 473
+        </div>
+    </body>
+</html>

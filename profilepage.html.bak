@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="profilecss.css" type="text/css" rel="stylesheet"/>
+        <title>Meal Generator</title>
+    </head>
+    <body>
+        <div class="topnav">
+            <h1>Meal Generator</h1>
+			<a href="singlerecipe.html"> New Template </a>
+			<a href="enterRecipe.html">Add Recipe</a>
+            <a class="active" href="user.php">Profile</a>
+            <a href="#about">About</a>
+            <a href="recipes.php">Recipes</a>
+            <a href="frontpage.html">Home</a>
+        </div>
+
+
+  <div class="container">
+
+        <section id="profile">
+            <header class="header">
+              <div class="details">
+                <img src="images/icon.png" alt="John Doe" class="profile-pic">
+                <h1 class="heading">test</h1>
+                <div class="desc">
+                  <p>test test</p>
+                </div>
+                <div class="stats">
+                  <div class="col-4">
+                    <h4>2</h4>
+                    <p><a href="#reviews">reviews</a></p>
+                  </div>
+                  <div class="col-4">
+                    <h4>1</h4>
+                    <p><a href="#favorites">favorites</a></p>
+                  </div>
+                  <div class="col-4">
+                    <h4>1</h4>
+                    <p><a href="#uploads">uploads</a></p>
+                  </div>
+                </div>
+              </div>
+            </header>
+          </section>
+
+
+          
+          <section id="reviews">
+            <h1>reviews</h1>
+
+
+            <section class="cards">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="images/chicken_recipe1.jpg" class="card-img">
+                        <h2 class="card-title">Creamy Herb Chicken</h2>
+                        <p class="card-desc">
+                            So thick and creamy, this creamy herb sauce
+                            pairs perfectly over rice, pasta, 
+                            or Creamy Mashed Potatoes. 
+                            To keep the entire meal low carb, 
+                            try it over cauliflower mash!</p>
+                    </div>
+                    <button class="card-btn">View Recipe</button>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <img src="images/chicken_recipe2.jpg" class="card-img">
+                        <h2 class="card-title">Creamy Garlic Chicken Breasts</h2>
+                        <p class="card-desc">Chicken breasts in an irresistible garlic sauce 
+                            filled with caramelized onions and garlic 
+                            is a winner of a chicken dinner!</p>
+                    </div>
+                    <button class="card-btn">View Recipe</button>
+                </div>
+
+            </section>
+          </section>
+
+          <section id="favorites">
+            <h1>favorites</h1>
+
+            <section class="cards">
+            <div class="card">
+                <div class="card-body">
+                    <img src="images/chicken_recipe3.jpg" class="card-img">
+                    <h2 class="card-title">Italian Baked Chicken Breast</h2>
+                    <p class="card-desc"> Boneless skinless baked chicken breast 
+                        recipe, prepared with a simple spice mixture, 
+                        garlic and olive oil, 
+                        and finished with fresh parsley and basil!</p>
+                </div>
+                <button class="card-btn">View Recipe</button>
+            </div>
+        </section>
+        </section>
+
+        <section id="uploads">
+            <h1>uploads</h1>
+            <section class="cards">
+                <div class="card">
+                    <?php 
+						if($_GET['q'] !== ''){
+						$q = $_GET['q'];
+						$con = mysqli_connect('localhost', 'root', '', 'recipes');
+							if(!isset($q)){
+								echo 'No Results Found';
+							}
+							else{
+							$sql = "SELECT * FROM `meals` WHERE username LIKE '% $q %' OR Description LIKE '% $q %' OR Category LIKE '%$q%'";
+							$result = mysqli_query($con, $sql);  
+							$num_rows = mysqli_num_rows($result);
+					?>
+                </div>
+
+            </section>
+            
+        </section>
+		<section class="cards">
+            <?php
+                    while($row = mysqli_fetch_array($result)){
+            ?>
+                        <div class="card">
+                            <div class="card-body">
+                            <img src= 
+                                <?php
+                                    $url = $row['Picture'];
+                                    if (@exif_imagetype($url) == IMAGETYPE_JPEG || @exif_imagetype($url) == IMAGETYPE_PNG){ 
+                                        echo $url;
+                                    } else {
+                                        echo "https://ch0styu58r-flywheel.netdna-ssl.com/wp-content/uploads/2017/01/empty-plate.jpg";
+                                    }
+                                ?>
+                                class="card-img">
+                                <h2 class="card-title"> <?php echo $row['Name']?></h2>
+                                <p class="card-desc"> <?php echo $row['Description']?>...</p>
+                            </div>
+                            <button class="card-btn">View Recipe</button>
+                        </div>
+            <?php   
+                    }
+                }
+            } else {
+                header('Location: recipes.php');
+            }
+             ?>
+        </section>
+        </div>
+    </div>
+
+
+
+    
+        <div class="footer-bottom">
+            &copy; MealGenerator | COSC 473
+        </div>
+    </body>
+</html>

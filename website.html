@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            pie
+        </title>
+
+       <!-- <link href="style.css" type="text/css" rel="stylesheet" />
+        <script src="style.js" type="text/javascript"></script>  -->
+    </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+          height: 1000px;
+          background: linear-gradient(141deg, #ffffff 0%, #929292 75%, #777777 90%);
+        }
+        .collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+    </style>
+
+
+    <body style="font-family: Georgia, 'Times New Roman', Times, serif;font-size: 12pt; background-color:rgb(255, 255, 255);">
+        <h1 style=" color: rgb(0, 0, 0);text-align: center;">
+            pie
+        </h1>
+        <p style="text-align: center;">
+            <img src="images/pie.jpg" width="290">
+        </p>
+
+        <button type="button" class="collapsible">INGEREDIENTS</button>
+            <div class="content">
+                <p>
+                    <ul style="list-style-type: square;">
+                        <li>
+                            1 cup white sugar
+                        </li>
+                        <li>
+                            2 tablespoons all-purpose flour
+                        </li>
+                        <li>
+                            3 tablespoons cornstarch
+                        </li>
+                        <li>
+                            &#188; teaspoon salt
+                        </li>
+                        <li>
+                           1 &#189; cups water
+                        </li>
+                        <li>
+                            2 lemons, juiced and zested
+                        </li>
+                        <li>
+                            2 teaspoons butter
+                        </li>
+                        <li>
+                            4 egg yolks, beaten
+                        </li>
+                        <li>
+                            19-inch pie crust, baked
+                        </li>
+                        <li>
+                            4 egg whites, beaten
+                        </li>
+                        <li>
+                            6 teaspoons white sugar
+                        </li>
+                    </ul>
+                </p>
+            </div>
+
+
+        <button type="button" class="collapsible">DIRECTION</button>
+        <div class="content">
+            <p>
+                <ul style="list-style-type: decimal;">
+                    <li>
+                        <strong>
+                            Preheat oven:
+                        </strong>
+                        Preheat oven to 350&#176;F
+                    </li>
+                    <li>
+                        <strong>
+                            Make Lemon Filling:
+                        </strong>
+                        In a medium saucepan ...
+                    </li>
+                    <ul style="list-style-type: disc;">
+                        <li>
+                            Whisk together 1 cup sugar, flour, cornstarch, and salt.
+                        </li>
+                        <li>
+                            Stir in water, lemon juice and lemon zest.
+                        </li>
+                        <li>
+                            Cook over medium heat, stirring frequently, until mixtures comes to a boil.
+                        </li>
+                        <li>
+                            Stir in butter.
+                        </li>
+                        <li>
+                            Place egg yolks in a small boel and gradually whisk in &#189; cup of hot sugar mix.
+                        </li>
+                        <li>
+                            Bring to boil and continue to cook while stirring constantly until thick.
+                        </li>
+                        <li>
+                            Remove from heat.
+                        </li>
+                        <li>
+                            Pour filling into backed pir crust.
+                        </li>
+                    </ul>
+                    <li>
+                        <strong>
+                            Make Meringue:
+                        </strong>
+                        In a large glass or metal bowl ...
+                        <ul style="list-style-type:circle;">
+                            <li>
+                                Whip egg whites until foamy.
+                            </li>
+                            <li>
+                                Add sugar gradually, and continue to whip until stiff peaks form.
+                            </li>
+                            <li>
+                                Spread meringue over pie, sealing edges at the crust.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>
+                            Bake:
+                        </strong>
+                        Bake in preheated oven for 10 minutes
+                    </li>
+    
+                </ul>
+            </p>
+        </div>
+
+
+        <script>
+            var coll = document.getElementsByClassName("collapsible");
+            var i;
+            
+            for (i = 0; i < coll.length; i++) {
+              coll[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight){
+                  content.style.maxHeight = null;
+                } else {
+                  content.style.maxHeight = content.scrollHeight + "px";
+                } 
+              });
+            }
+            </script>
+
+    </body>
+</html>

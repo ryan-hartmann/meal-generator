@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HTML Contact Form</title>
+<link rel="stylesheet" href="enterrecipt.css" type="text/css">
+</head>
+<body>
+<div class="form">
+    <div class="box">
+    <form method="POST" action="newRecipe.php">
+        <h3>Recipt Submission</h3>
+        <table>
+            <tr>
+                <td>
+                    <div class="username">
+                    <label for="Username">Username:</label><br>
+                    <input type="text" name="Username" placeholder="Username" id="">
+                </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="username">
+                    <label for="Name">Recipe Name:</label><br>
+                    <input type="text" name="Name" placeholder="Recipe Name" id="">
+                </div>
+                </td>
+            </tr>
+			<tr>
+                <td>
+                    <div class="username">
+                    <label for="Ingredients">Ingredients:</label><br>
+                    <input type="text" name="Ingredients" placeholder="Ingredients" id="">
+                </div>
+                </td>
+            </tr>
+			<tr>
+                <td>
+                    <div class="username">
+                    <label for="Instructions">Instructions:</label><br>
+                    <input type="text" name="Instructions" placeholder="Instructions" id="">
+                </div>
+                </td>
+            </tr>
+			<tr>
+                <td>
+                    <div class="username">
+                    <label for="Picture">Picture (Enter URL):</label><br>
+                    <input type="text" name="Picture" placeholder="Picture" id="">
+                </div>
+                </td>
+            </tr>
+			<tr>
+                <td>
+                    <div class="button">
+
+                        <!-- if not working with php delete this line and use the orginal line below -->
+                        <button id="send">submit</button>
+                        <!-- the og line
+                    <input type="submit" name="submit" value="submit">
+                    -->
+                </div>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</div>
+</body>
+</html>
