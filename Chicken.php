@@ -19,7 +19,7 @@ $query = mysqli_query($con, "SELECT * FROM 'meals' WHERE Name LIKE 'chicken' ORD
 	<a href="enterRecipe.html">Add recipe</a>
         <a href="about.html">About</a>
         <a href="recipes.php">Recipes</a>
-        <a class="active" href="index.php">Home</a>
+        <a class="active" href="frontpage.php">Home</a>
     </div>
 
 
